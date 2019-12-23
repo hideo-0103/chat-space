@@ -36,6 +36,7 @@ Things you may want to cover:
 ### Association
 - has_many :groups
 - has_many :messages
+- has_many :users_group
 
 ## massagesテーブル
 |Column|Type|Options|
@@ -56,7 +57,7 @@ Things you may want to cover:
 ### Association
 - has_many :users
 - has_many :massages
-
+- has_many :users_group
 ## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -64,4 +65,4 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
-- belongs_to :massages
+- belongs_to :group

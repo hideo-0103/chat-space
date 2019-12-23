@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20191223014659) do
     t.datetime "updated_at",     null: false
     t.string   "name"
     t.string   "e_mail_address"
+    t.integer  "group_id"
   end
 
 end

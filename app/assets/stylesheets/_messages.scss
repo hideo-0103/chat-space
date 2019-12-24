@@ -45,6 +45,23 @@
     .groups{
       height: calc(100vh - 100px);
       background-color: #2f3e51;
+      padding: 20px;
+      a{
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        .group{
+          width: 260px;
+          margin-bottom: 40px;
+          &__group-name{
+            font-size: 15px;
+            margin-bottom: 5px;
+          }
+          &__last-message{
+            font-size: 11px;
+          }
+        }
+      }
     }
   }
   .chat-main{

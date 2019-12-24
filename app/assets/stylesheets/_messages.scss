@@ -23,5 +23,17 @@
     width: calc(100vw - 300px);
     height: 100%;
     background-color: #fff;
+    .main-header{
+      height: 100px;
+      border-bottom: 1px solid #eee;
+    }
+    .messages{
+      height: calc(100vh - 190px);
+      background-color: #fafafa;
+    }
+    .form{
+      height: 90px;
+      background-color: #d2d2d2;
+    }
   }
 }

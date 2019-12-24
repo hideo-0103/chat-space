@@ -74,6 +74,7 @@
       display: flex;
       justify-content: space-between;
       padding: 0 40px;
+      box-sizing: border-box;
       &__left-box{
         padding-top: 35px;
         &--group-name{
@@ -138,9 +139,6 @@
       padding: 20px 40px;
       form{
         display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center; 
         .input-box{
           width: 100%;
           position: relative;

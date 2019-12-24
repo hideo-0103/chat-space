@@ -1,4 +1,14 @@
 .chat-main
   .main-header
+    .main-header__left-box
+      %p.main-header__left-box--group-name
+        チームA
+      %ul.main-header__left-box--member-list
+        %li
+          Member:masa
+    = link_to "#" do
+      .main-header__edit-btn
+        Edit
+
   .messages
   .form

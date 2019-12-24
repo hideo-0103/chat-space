@@ -4,11 +4,20 @@
       %p.main-header__left-box--group-name
         チームA
       %ul.main-header__left-box--member-list
+        Member:
         %li
-          Member:masa
+          masa
     = link_to "#" do
-      .main-header__edit-btn
+      .main-header__edit-btn<
         Edit
 
   .messages
+    .message
+      .message__info
+        %p.message__info--talker
+          masa
+        %p.message__info--date
+          2019/12/24(火曜) 16:57:00
+      %p.message__text
+        疲れた。
   .form

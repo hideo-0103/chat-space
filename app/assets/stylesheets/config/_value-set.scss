@@ -1,6 +1,16 @@
 $side-bar-width:300px;
+$header-height:100px;
+$form-height:90px;
 $main-width:calc(100vw - #{$side-bar-width});
+$messages-height:calc(100vh - (#{$header-height} + #{$form-height}));
+
+$chat-side-bg: #253141;
+$groups-bg:#2f3e51;
 $side-bar-text:#fff;
+
+$chat-main-bg:#fff;
+$messages-bg:#fafafa;
+$form-bg:#d2d2d2;
 $main-text:#333;
 $main-sub-text:#999;
 $btn-color:#38aef0;

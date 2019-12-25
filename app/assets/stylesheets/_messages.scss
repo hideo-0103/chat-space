@@ -10,10 +10,10 @@
   @include area(100vh,100vw);
   .chat-side{
     @include area(100%,$side-bar-width);
-    background-color: #253141;
+    background-color: $chat-side-bg;
     color: $side-bar-text;
     .side-header{
-      height: 100px;
+      height: $header-height;
       background-color: inherit;
       display: flex;
       @include verticality_centering;
@@ -38,9 +38,10 @@
       }
     }
     .groups{
-      height: calc(100vh - 100px);
-      background-color: #2f3e51;
+      height: calc(100vh - #{$header-height});
+      background-color: $groups-bg;
       padding: 20px;
+      box-sizing: border-box;
         a{
           @include link_layout($side-bar-text);
         }
@@ -60,12 +61,13 @@
   }
   .chat-main{
     @include area(100%,$main-width);
-    background-color: #fff;
+    background-color: $chat-main-bg;
     .main-header{
-      height: 100px;
+      height: $header-height;
       border-bottom: 1px solid #eee;
       @include flex_style(space-between);
       padding: 0 40px;
+      box-sizing: border-box;
       &__left-box{
         padding-top: 35px;
         &--group-name{
@@ -94,8 +96,8 @@
       }
     }
     .messages{
-      height: calc(100vh - 190px);
-      background-color: #fafafa;
+      height: $messages-height;
+      background-color: $messages-bg;
       padding: 0 40px;
       .message{
         padding-top: 35px;
@@ -121,8 +123,8 @@
       }
     }
     .form{
-      height: 90px;
-      background-color: #d2d2d2;
+      height: $form-height;
+      background-color: $form-bg;
       padding: 20px 40px;
       form{
         display: flex;

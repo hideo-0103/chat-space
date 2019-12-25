@@ -1,43 +1,38 @@
+@import "mixin/mixin";
+@import "config/value-set";
+
 * {
   box-sizing: border-box;
 }
 
 .wrapper {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  @include area(100vh,100vw);
   .chat-side{
-    width: 300px;
-    height: 100%;
+    @include area(100%,$side-bar-width);
     background-color: #253141;
-    color: #fff;
+    color: $side-bar-text;
     .side-header{
       height: 100px;
       background-color: inherit;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      @include verticality_centering;
       &__box{
-        height: 20px;
-        width: 260px;
-        display: flex;
-        justify-content: space-between;
+        @include area(20px,260px);
+        @include flex_style(space-between);
         &--username{
           font-size: 16px;
           font-weight: bold;
         }
         &--menu{
-          width: 60px;
-          height: inherit;
+          @include area(20px,60px);
           list-style: none;
-          display: flex;
-          justify-content: flex-end;
+          @include flex_style(flex-end);
           li{
             margin-left: 5px;
-          }
-          a{
-            color: #fff;
+            a{
+              @include link_layout($side-bar-text);
+            }
           }
         }
       }
@@ -46,10 +41,9 @@
       height: calc(100vh - 100px);
       background-color: #2f3e51;
       padding: 20px;
-      a{
-        text-decoration: none;
-        color: #fff;
-        display: block;
+        a{
+          @include link_layout($side-bar-text);
+        }
         .group{
           width: 260px;
           margin-bottom: 40px;
@@ -65,43 +59,36 @@
     }
   }
   .chat-main{
-    width: calc(100vw - 300px);
-    height: 100%;
+    @include area(100%,$main-width);
     background-color: #fff;
     .main-header{
       height: 100px;
       border-bottom: 1px solid #eee;
-      display: flex;
-      justify-content: space-between;
+      @include flex_style(space-between);
       padding: 0 40px;
-      box-sizing: border-box;
       &__left-box{
         padding-top: 35px;
         &--group-name{
           font-size: 20px;
-          color: #333;
+          color: $main-text;
           padding-bottom: 15px;
         }
         &--member-list{
           display: flex;
           font-size: 12px;
-          color: #999;
+          color: $main-sub-text;
         }
       }
       a{
-        text-decoration: none;
-        color: #38aef0;
-        display: block;
+        @include link_layout($btn-color);        
+        height: 40px;
+        line-height: 40px;
+        margin-top: 28px;
         .main-header__edit-btn{
-          height: 40px;
+          @include verticality_centering;
           font-size: 16px;
-          border: 1px solid #38aef0;
+          border: 1px solid $btn-color;
           padding: 0 20px;
-          margin-top: 28px;
-          line-height: 40px;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
           box-sizing: border-box;
         }
       }
@@ -119,11 +106,11 @@
           &--talker{
             font-weight: bold;
             font-size: 16px;
-            color: #333;
+            color: $main-text;
           }
           &--date{
             font-size: 12px;
-            color: #999;
+            color: $main-sub-text;
             margin-left: 10px;
           }
         }
@@ -143,8 +130,7 @@
           width: 100%;
           position: relative;
           &__text{
-            width: 100%;
-            height: 50px;
+            @include area(50px, 100%);
             padding: 0 40px 0 10px;
           }
           &__image{
@@ -159,16 +145,13 @@
           }
         }
         .submit-btn{
-          height: 50px;
-          width: 100px;
+          @include area(50px,100px);
           padding: 0 30px;
           margin-left: 15px;
-          background-color: #38aef0;
-          color: #fff;
+          background-color: $btn-color;
+          color: $side-bar-text;
           cursor: pointer;
         }
-
       }
     }
   }
-}

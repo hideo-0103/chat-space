@@ -1,0 +1,21 @@
+@mixin link_layout($color) {
+    display: block;
+    text-decoration: none;
+    color: $color;
+}
+
+@mixin verticality_centering {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex_style($value) {
+    display: flex;
+    justify-content: $value;
+}
+
+@mixin area($height,$width) {
+    height: $height;
+    width: $width;
+}

@@ -1,0 +1,19 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box--username
+        masa
+      %ul.side-header__box--menu
+        %li.side-header__box__menu--new-group
+          = link_to "#" do
+            %i.fa.fa-edit
+        %li.side-header__box__menu--edit
+          = link_to "#" do
+            %i.fa.fa-cog
+  .groups
+    = link_to "#" do
+      .group
+        %p.group__group-name
+          チームA
+        %p.group__last-message
+          メッセージはまだありません。

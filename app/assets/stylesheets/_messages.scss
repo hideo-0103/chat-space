@@ -1,0 +1,159 @@
+@import "mixin/mixin";
+@import "config/value-set";
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  @include area(100vh,100vw);
+  .chat-side{
+    @include area(100%,$side-bar-width);
+    background-color: $chat-side-bg;
+    color: $side-bar-text;
+    .side-header{
+      height: $header-height;
+      background-color: inherit;
+      display: flex;
+      @include verticality_centering;
+      &__box{
+        @include area(20px,260px);
+        @include flex_style(space-between);
+        &--username{
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &--menu{
+          @include area(20px,60px);
+          list-style: none;
+          @include flex_style(flex-end);
+          li{
+            margin-left: 5px;
+            a{
+              @include link_layout($side-bar-text);
+            }
+          }
+        }
+      }
+    }
+    .groups{
+      height: calc(100vh - #{$header-height});
+      background-color: $groups-bg;
+      padding: 20px;
+      box-sizing: border-box;
+        a{
+          @include link_layout($side-bar-text);
+        }
+        .group{
+          width: 260px;
+          margin-bottom: 40px;
+          &__group-name{
+            font-size: 15px;
+            margin-bottom: 5px;
+          }
+          &__last-message{
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+  .chat-main{
+    @include area(100%,$main-width);
+    background-color: $chat-main-bg;
+    .main-header{
+      height: $header-height;
+      border-bottom: 1px solid #eee;
+      @include flex_style(space-between);
+      padding: 0 40px;
+      box-sizing: border-box;
+      &__left-box{
+        padding-top: 35px;
+        &--group-name{
+          font-size: 20px;
+          color: $main-text;
+          padding-bottom: 15px;
+        }
+        &--member-list{
+          display: flex;
+          font-size: 12px;
+          color: $main-sub-text;
+        }
+      }
+      a{
+        @include link_layout($btn-color);        
+        height: 40px;
+        line-height: 40px;
+        margin-top: 28px;
+        .main-header__edit-btn{
+          @include verticality_centering;
+          font-size: 16px;
+          border: 1px solid $btn-color;
+          padding: 0 20px;
+          box-sizing: border-box;
+        }
+      }
+    }
+    .messages{
+      height: $messages-height;
+      background-color: $messages-bg;
+      padding: 0 40px;
+      .message{
+        padding-top: 35px;
+        padding-bottom: 11px;
+        &__info{
+          display: flex;
+          margin-bottom: 12px;
+          &--talker{
+            font-weight: bold;
+            font-size: 16px;
+            color: $main-text;
+          }
+          &--date{
+            font-size: 12px;
+            color: $main-sub-text;
+            margin-left: 10px;
+          }
+        }
+        &__text{
+          font-size: 14px;
+          color: #434a54;
+        }
+      }
+    }
+    .form{
+      height: $form-height;
+      background-color: $form-bg;
+      padding: 20px 40px;
+      form{
+        display: flex;
+        .input-box{
+          width: 100%;
+          position: relative;
+          &__text{
+            @include area(50px, 100%);
+            padding: 0 40px 0 10px;
+          }
+          &__image{
+            font-size: 1.3rem;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 33%;
+            &__file{
+              display: none;
+            }
+          }
+        }
+        .submit-btn{
+          @include area(50px,100px);
+          padding: 0 30px;
+          margin-left: 15px;
+          background-color: $btn-color;
+          color: $side-bar-text;
+          cursor: pointer;
+        }
+      }
+    }
+  }

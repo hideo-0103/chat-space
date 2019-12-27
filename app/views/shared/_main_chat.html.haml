@@ -20,11 +20,12 @@
           2019/12/24(火曜) 16:57:00
       %p.message__text
         疲れた。
+
   .form
-    %form.new-message
-      .input-box
-        %input{ placeholder: "Type a message", class: "input-box__text",type: "text"}
-        %label{class: "input-box__image"}
-          = icon('far', 'image')
-          %input{name: "message[image]", class:"input-box__image__file", type: "file"}
-      %input{ type: "submit", class: "submit-btn", value:"send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input-box__text', placeholder: 'type a message' 
+      .input_box
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon') 
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'

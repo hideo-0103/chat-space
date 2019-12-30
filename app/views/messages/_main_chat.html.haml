@@ -2,15 +2,15 @@
   .main-header
     .main-header__left-box
       %p.main-header__left-box--group-name
-        チームA
+        = @group.name
       %ul.main-header__left-box--member-list
         Member:
         %li
-          masa
+          - @users.each do |user|
+            = user.name
     = link_to edit_group_path(current_user) do
       .main-header__edit-btn<
         Edit
-
   .messages
     = render @messages
     

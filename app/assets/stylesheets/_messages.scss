@@ -96,6 +96,7 @@
       }
     }
     .messages{
+      overflow: scroll;
       height: $messages-height;
       background-color: $messages-bg;
       padding: 0 40px;
@@ -128,9 +129,9 @@
       padding: 20px 40px;
       form{
         display: flex;
-        .input-box{
+        position: relative;
+        .input-box {
           width: 100%;
-          position: relative;
           &__text{
             @include area(50px, 100%);
             padding: 0 40px 0 10px;
@@ -139,8 +140,8 @@
             font-size: 1.3rem;
             cursor: pointer;
             position: absolute;
-            right: 10px;
-            top: 33%;
+            right: 120px;
+            top: 32%;
             &__file{
               display: none;
             }

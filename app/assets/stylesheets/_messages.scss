@@ -96,6 +96,7 @@
       }
     }
     .messages{
+      overflow: scroll;
       height: $messages-height;
       background-color: $messages-bg;
       padding: 0 40px;

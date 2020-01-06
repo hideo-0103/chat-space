@@ -2,10 +2,10 @@ $(function(){
   function buildHTML(message){
     if (message.image) {
       var html = 
-      `<div class="message">
+      `<div class="message" data-message-id=${message.id}>
         <div class="message__info">
           <p class="message__info--talker">
-            ${message.user}
+            ${message.user_name}
           </p>
           <p class="message__info--date">
             ${message.created_at}
@@ -21,7 +21,7 @@ $(function(){
       `<div class="message">
         <div class="message__info">
           <p class="message__info--talker">
-            ${message.user}
+            ${message.user_name}
           </p>
           <p class="message__info--date">
             ${message.created_at}

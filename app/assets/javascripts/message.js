@@ -3,15 +3,15 @@ $(function(){
     if (message.image) {
       var html = 
       `<div class="message">
-        <div class="message_info">
-          <p class="message_info__talker">
+        <div class="message__info">
+          <p class="message__info--talker">
             ${message.user}
           </p>
-          <p class="message_info__date">
+          <p class="message__info--date">
             ${message.created_at}
           </p>
         </div>
-        <p class="message_info__date">
+        <p class="message__text">
           ${message.content}
         </p>
         <img class="lower-message__image" src="${message.image}">
@@ -19,15 +19,15 @@ $(function(){
     } else {
       var html =
       `<div class="message">
-        <div class="message_info">
-          <p class="message_info__talker">
+        <div class="message__info">
+          <p class="message__info--talker">
             ${message.user}
           </p>
-          <p class="message_info__date">
+          <p class="message__info--date">
             ${message.created_at}
           </p>
         </div>
-        <p class="message_info__date">
+        <p class="message__text">
           ${message.content}
         </p>
       </div>`

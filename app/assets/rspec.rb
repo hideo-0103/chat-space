@@ -4,7 +4,11 @@ def rspecskipper(instance,columns)
   while i < columns.length do
     ellorColumn = columns[i]
 
-    puts 'describe #{model} do\ndescribe '#create' do\nit \'is invalid without a #{ellorColumn} \' do\n#{instance} = build(:#{instance}, #{ellorColumn}: nil)\n#{instance}.valid?\nexpect(#{instance}.errors[:#{ellorColumn}]).to include()\nend\nend\nend'
+    puts 'describe #{model} dodescribe \'#create\' do
+      it \'is invalid without a #{ellorColumn} \' do#{instance} = build(:#{instance}, #{ellorColumn}: nil)#{instance}.valid?expect(#{instance}.errors[:#{ellorColumn}]).to include()
+    end
+  end
+end'
     i += 1
   end
 end
